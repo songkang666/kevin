@@ -17,7 +17,7 @@ app.set 'settings', require('./config/settings')('development')
 
 
 app.use express.static path.join(__dirname, 'public')
-app.set 'views', path.join(__dirname, '/app/views')
+app.set 'views', path.join(__dirname, '/main/views')
 app.set 'view engine', 'jade'
 app.engine 'jade', require('jade').__express
 
