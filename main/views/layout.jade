@@ -1,0 +1,63 @@
+doctype html
+html
+  head
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(http-equiv=Content-Type, content='text/html', charset='utf-8')
+    link(href="/stylesheets/bootstrap.css", rel="stylesheet")
+    //link(href="/stylesheets/style.css", rel="stylesheet")
+    script(type='text/javascript', src='/javascripts/jquery-1.10.2.js')
+    script(type='text/javascript', src='/javascripts/underscore.js')
+    script(type='text/javascript', src='/javascripts/backbone.js')
+    script(type='text/javascript', src='javascripts/jquery.rotate.1-1.js')
+    script(type='text/javascript', src='javascripts/jsclock-0.8.min.js')
+    script(type='text/javascript', src='/javascripts/bootstrap.js')
+
+    block title
+
+  body
+    header.navbar.navbar-default.navbar-fixed-top.bs-docs-nav(role="banner")
+      //script(type='text/template', id='user-template').
+      .container
+        .navbar-header
+          button.navbar-toggle
+          a.navbar-brand(href='#') 网站名
+        nav.collapse.navbar-collapse.bs-navbar-collapse(role="navigation")
+          ul.nav.navbar-nav
+            li.active
+              a(href="#") 欢迎你
+            li
+              a(href="#") 链接A
+            li
+              a(href="#") 链接B
+            li.dropdown
+              a.dropdown-toggle(data-toggle="dropdown", href="#") 下拉菜单C
+              ul.dropdown-menu
+                li
+                  a(href="#") 下拉导航1
+                li
+                  a(href="#") 下拉导航2
+                li
+                  a(href="#") 其他
+                li.divider
+                li.nav-header 标签
+                li
+                  a(href="#") 链接1
+                li
+                  a(href="#") 链接2
+          ul.nav.navbar-nav.pull-right
+            li
+              a(href="#") 右边链接
+            li.divider-vertical
+            li.dropdown
+              a.dropdown-toggle(data-toggle="dropdown", href="#") username
+              ul.dropdown-menu
+                li
+                  a(href="#") 修改密码
+                li
+                  a(href="/logout") 注销
+  
+    .content
+      block content
+    .foot
+      block foot
+
