@@ -26,11 +26,14 @@ app.use cookieParser()
 app.use session {secret: 'test'}
 
 app.use (req, res, next) ->
-  res.locals.current_user = req.session.user
+  #ToDo user authentication and create session
+  #may delete cookie, and then give req the new cookie to pass it to the next route
+  req.cookie = {username: 'kevin', type: 'test'}
   next()
 
-app.get '/', (req, res, next) ->
-  res.render 'layout'
+require './main/routes/login'
+require './main/routes/index'
 
+app.use (req, res) -> res.send 404
 
 app.listen app.get('settings').port, -> console.log 'Run in ' + app.get('settings').port

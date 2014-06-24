@@ -3,50 +3,43 @@ html
   head
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     meta(http-equiv="Content-Type", content='text/html', charset='utf-8')
-    //link(href="/stylesheets/metro/modern.css", rel="stylesheet")
-    link(href="/stylesheets/metro/metro-bootstrap.css", rel="stylesheet")
-    link(href="/stylesheets/style.css", rel="stylesheet")
-    script(type='text/javascript', src='/javascripts/jquery.min.js')
-    script(type='text/javascript', src='/javascripts/jquery.widget.js')
-    script(type='text/javascript', src='/javascripts/jquery.mousewheel.js')
-    script(type='text/javascript', src='/javascripts/underscore.js')
-    script(type='text/javascript', src='/javascripts/backbone.js')
-    script(type='text/javascript', src='/javascripts/metro/metro.min.js')
+    link(href="stylesheets/metro/metro-bootstrap.min.css", rel="stylesheet")
+    link(href="stylesheets/metro/metro-bootstrap-responsive.min.css", rel="stylesheet")
+    link(href="stylesheets/metro/iconFont.min.css", rel="stylesheet")
+    script(type='text/javascript', src='javascripts/jquery/jquery.min.js')
+    script(type='text/javascript', src='javascripts/jquery/jquery.widget.min.js')
+    script(type='text/javascript', src='javascripts/jquery/jquery.mousewheel.js')
+    script(type='text/javascript', src='javascripts/underscore.js')
+    script(type='text/javascript', src='javascripts/backbone.js')
+    script(type='text/javascript', src='javascripts/metro.min.js')
 
     block title
 
-  body.metro
-    .page
-      .nav-bar
-        .nav-bar-inner
-          span.pull-menu
-          a(href="/")
-            span.element.brand
-              small kevin
-          .divider
-          ul.menu
+  body.metro(style="background-color: rgb(239, 234, 227);")
+    div.navbar
+      div.navbar-content
+        a.element
+          span.icon-grid-view  KEVIN
+        span.element-divider
+        ul.element-menu
+          li
+            a.dropdown-toggle(href="#") 看看有啥呢
+            ul.dropdown-menu(data-role="dropdown")
+              li
+                a(href="index") 首页
+              li
+                a(href="#") pp
+              div.divider
+              li
+                a(href="pp") TT
+        div.element.place-right
+          a.dropdown-toggle(href="#") username
+          ul.dropdown-menu(data-role="dropdown")
             li
-              a(href="index") 首页
-            li(data-role="dropdown")
-              a(href="#") pp
-              ul.dropdown-menu
-                li
-                  a(href="pp")
-                li
-                  .divider
-          ul.nav.navbar-nav.pull-right
+              a(href="#") 修改密码
             li
-              a(href="#") 右边链接
-            li.divider-vertical
-            li.dropdown
-              a.dropdown-toggle(data-toggle="dropdown", href="#") username
-              ul.dropdown-menu
-                li
-                  a(href="#") 修改密码
-                li
-                  a(href="/logout") 注销
-  
-    .page.bg-color-red asdfasdfasfsaf
+              a(href="/logout") 注销
+
     block content
     block foot
 
