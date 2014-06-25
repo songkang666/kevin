@@ -3,29 +3,33 @@ html
   head
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     meta(http-equiv="Content-Type", content='text/html', charset='utf-8')
-    link(href="/stylesheets/metro/metro-bootstrap.min.css", rel="stylesheet")
+    link(href="/stylesheets/bootstrap.min.css", rel="stylesheet")
+    link(href="/stylesheets/bootstrap-theme.min.css", rel="stylesheet")
     link(href="/stylesheets/style.css", rel="stylesheet")
     script(type='text/javascript', src='/javascripts/jquery/jquery.min.js')
     script(type='text/javascript', src='/javascripts/jquery/jquery.widget.min.js')
     script(type='text/javascript', src='/javascripts/jquery/jquery.mousewheel.js')
-    script(type='text/javascript', src='/javascripts/underscore.js')
-    script(type='text/javascript', src='/javascripts/backbone.js')
-    script(type='text/javascript', src='/javascripts/metro.min.js')
+    script(type='text/javascript', src='/javascripts/bootstrap.min.js')
 
     title 登录
 
-  body.metro
-    div.grid
-      div.row
-        div.span8
-        div.span4
-          div.input-control.text
-            input(type="text", value="", placeholder="用户名")
-            input(type="password", value="", placeholder="密码")
-            div.switch
-              label
-                input(type="checkbox")
-                span.check  保存密码两周
-            button.large 登录
-            button.large 取消
+  body(style="background-image: url(../images/login.jpg);")
+    div.col-xs-6
+      h1
+        a(href="/") KEVIN
+    div.col-xs-offset-2.col-xs-4
+      form(role="form", style="margin-top: 200px;")
+        div.input-group.input-group-lg
+          input.form-control(type="text", value="", placeholder="用户名", style="border:0; background-color:#31b0d5;")
+        br
+        div.input-group.input-group-lg
+          input.form-control(type="password", value="", placeholder="密码", style="border:0; background-color:#31b0d5;")
+        br
+        div.input-group
+          input(type="checkbox", id="remember")
+          label(for="remember") 保存密码两周
+        div.btn-group
+          button.btn.btn-default.btn-lg 登录
+        div.btn-group
+          button.btn.btn-default.btn-lg 取消
 

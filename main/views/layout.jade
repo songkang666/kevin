@@ -3,42 +3,56 @@ html
   head
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     meta(http-equiv="Content-Type", content='text/html', charset='utf-8')
-    link(href="stylesheets/metro/metro-bootstrap.min.css", rel="stylesheet")
-    link(href="stylesheets/metro/metro-bootstrap-responsive.min.css", rel="stylesheet")
-    link(href="stylesheets/metro/iconFont.min.css", rel="stylesheet")
+    link(href="stylesheets/bootstrap.min.css", rel="stylesheet")
+    link(href="stylesheets/bootstrap-theme.min.css", rel="stylesheet")
+    link(href="stylesheets/style.css", rel="stylesheet")
     script(type='text/javascript', src='javascripts/jquery/jquery.min.js')
     script(type='text/javascript', src='javascripts/jquery/jquery.widget.min.js')
     script(type='text/javascript', src='javascripts/jquery/jquery.mousewheel.js')
     script(type='text/javascript', src='javascripts/underscore.js')
+    script(type='text/javascript', src='javascripts/bootstrap.min.js')
     script(type='text/javascript', src='javascripts/backbone.js')
-    script(type='text/javascript', src='javascripts/metro.min.js')
 
     block title
 
-  body.metro(style="background-color: rgb(239, 234, 227);")
-    div.navbar
-      div.navbar-content
-        a.element
-          span.icon-grid-view  KEVIN
-        span.element-divider
-        ul.element-menu
-          li
-            a.dropdown-toggle(href="#") 看看有啥呢
-            ul.dropdown-menu(data-role="dropdown")
-              li
-                a(href="index") 首页
-              li
-                a(href="#") pp
-              div.divider
-              li
-                a(href="pp") TT
-        div.element.place-right
-          a.dropdown-toggle(href="#") username
-          ul.dropdown-menu(data-role="dropdown")
+  body(style="background-color: rgb(239, 234, 227);")
+    header.navbar.navbar-inverse.navbar-fixed-top(role="banner")
+      div.container
+        div.navbar-header
+          button.navbar-toggle(data-toggle="collapse", data-target="#navbar-collapse")
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href="#") KEVIN
+        nav.collapse.navbar-collapse(id="navbar-collapse", role="navigation")
+          ul.nav.navbar-nav
             li
-              a(href="#") 修改密码
+              a(href="/index") 首页
+            li.dropdown
+              a.dropdown-toggle(data-toggle="dropdown", href="#") 看看有啥呢
+                b.caret
+              ul.dropdown-menu
+                li
+                  a(href="#") 啥也没有
+                li
+                  a(href="#") 还是啥也没有
+                li
+                  div.divider
+                li
+                  a(href="#") 依旧是啥也没有
+          ul.nav.navbar-nav.navbar-right
+            li.dropdown
+              a.dropdown-toggle(data-toggle="dropdown", href="#") username
+                b.caret
+              ul.dropdown-menu
+                li
+                  a(href="#") 修改密码
+                li
+                  div.divider
+                li
+                  a(href="/logout") 注销
             li
-              a(href="/logout") 注销
+              a(href="/about") 关于
 
     block content
     block foot
